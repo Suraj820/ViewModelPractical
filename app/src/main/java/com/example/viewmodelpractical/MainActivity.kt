@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.viewmodelpractical.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
