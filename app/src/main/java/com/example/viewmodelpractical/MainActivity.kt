@@ -14,11 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         mainViewModelFactory = MainViewModelFactory(0)
-
         mainActivityViewModel = ViewModelProvider(this,mainViewModelFactory)[MainActivityViewModel::class.java]
-        binding.textView.text = mainActivityViewModel.getLastCount().toString()
-        binding.button.setOnClickListener {
-            binding.textView.text = mainActivityViewModel.getUpdatedCounter().toString()
-        }
+        binding.lifecycleOwner =this // assign the owner of Observer
+        binding.viewModel = mainActivityViewModel
     }
 }
