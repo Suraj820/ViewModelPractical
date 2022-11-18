@@ -3,6 +3,7 @@ package com.example.viewmodelpractical
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.viewmodelpractical.databinding.ActivityMainBinding
 
@@ -14,8 +15,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         mainViewModelFactory = MainViewModelFactory(0)
+
         mainActivityViewModel = ViewModelProvider(this,mainViewModelFactory)[MainActivityViewModel::class.java]
-        binding.lifecycleOwner =this // assign the owner of Observer
-        binding.viewModel = mainActivityViewModel
+        binding.textView.text = mainActivityViewModel.getLastCount().toString()
+
+        mainActivityViewModel.countData.observe(this, Observer {
+            binding.textView.text = it.toString()
+        })
+
+        binding.button.setOnClickListener {
+             mainActivityViewModel.getUpdatedCounter()
+        }
     }
 }
