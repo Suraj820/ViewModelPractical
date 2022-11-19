@@ -25,7 +25,7 @@ A ViewModel’s onCleared() is called only when the app is put into the backgrou
 
 <b>Create a VIewModel class.</b>
 
-```
+```kotlin
 class MainActivityViewModel : ViewModel() {
 ...........
 ...........
@@ -35,7 +35,7 @@ class MainActivityViewModel : ViewModel() {
 
 <b>Get an instance(object) of a ViewModel using ViewModel provider.</b>
 
-```
+```kotlin
 private lateinit var viewModel: MainActivityViewModel
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -47,7 +47,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 <b>Create a ViewModelFactory.</b>
 
-```
+```kotlin
 class MainActivityViewModelFactory(private val startingTotal : Int) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainActivityViewModel::class.java)){
@@ -59,7 +59,7 @@ class MainActivityViewModelFactory(private val startingTotal : Int) : ViewModelP
 ```
 
 <b>Get an instance(object) of a ViewModel when using a ViewModelFactory.</b>
-```
+```kotlin
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainActivityViewModel
     private lateinit var viewModelFactory: MainActivityViewModelFactory
@@ -84,7 +84,7 @@ The AndroidViewModel class extends ViewModel class, so it has all the same funct
 The only added functionality for AndroidViewModel is that it is context aware, when initialising AndroidViewModel we have to pass the application context as a parameter.
 
 AndroidViewModel is helpful if we require context to get a system service or have a similar requirement(displaying a Toast message).
-```
+```kotlin
 class MyAnViewModel(application: Application) : AndroidViewModel(application) {
    ........
    ........
