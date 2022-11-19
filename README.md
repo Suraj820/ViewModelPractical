@@ -74,9 +74,9 @@ class MainActivity : AppCompatActivity() {
 
 ```
 
-
+</br>
 <h2>Frequently Asked Questions.</h2>
-<b>1) What is the difference between ViewModel() and AndroidViewModel() ?</b>
+<b>1) What is the difference between ViewModel() and AndroidViewModel() ?</b></br>
 
 
 The AndroidViewModel class extends ViewModel class, so it has all the same functionality.
@@ -93,14 +93,14 @@ class MyAnViewModel(application: Application) : AndroidViewModel(application) {
 ```
 </br>
 
-<b>2) What is "ViewModelProvider" ?</b>
+<b>2) What is "ViewModelProvider" ?</b></br>
 
 
 We can not construct a ViewModel instance on our own. We need to use the ViewModelProvider utility provided by Android to create instances of ViewModels.
 
 
 
-<b>3) When do we need to create a ViewModelFactory class ?</b>
+<b>3) When do we need to create a ViewModelFactory class ?</b></br>
 
 
 ViewModelProvider can only instantiate ViewModels with no arg constructors.
@@ -111,12 +111,12 @@ We provide that extra support by creating a Factory class and passing its instan
 
 
 
-<b>4) When we are extending AndroidViewModel, since it should always has "application" as a constructor parameter, do we need to use a ViewModelFactory ?</b>
+<b>4) When we are extending AndroidViewModel, since it should always has "application" as a constructor parameter, do we need to use a ViewModelFactory ?</b></br>
 No, if the ViewModel created extending AndroidViewModel, does not have parameters other than "application", we do not need to use a ViewModelFactory for that.
 
 
 
-<b>5) What is the onCleared() function of a ViewModel?</b>
+<b>5) What is the onCleared() function of a ViewModel?</b></br>
   When a ViewModel object is no longer required, system will call to its onCleared() function to destroy(clear) it.
 
    It will be called when the app is put into the background and the app process is killed in order to free up the     
