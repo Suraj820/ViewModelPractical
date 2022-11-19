@@ -1,7 +1,13 @@
 # ViewModelPractical
 Learning ViewModel and ViewModelFactory
-
-
+<l>
+<li>
+<a href ="https://github.com/Suraj820/ViewModelPractical/tree/ViewModel_with_LiveData">ViewModel with LiveData</a>
+</li>
+<li>
+<a href ="https://github.com/Suraj820/ViewModelPractical/tree/viewModel_with_LiveData_%26_dataBinding">ViewModel with LiveData & Databinding</a>
+</li>
+</l>
 
 
 <h2>Summery</h2>
